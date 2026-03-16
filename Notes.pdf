@@ -1,0 +1,19 @@
+One More Thing I Noticed:-
+
+You commented out live links:
+// live: "https://..."
+
+So your Live Demo button may open undefined.
+To fix safely:
+
+{project.live && (
+  <a
+    href={project.live}
+    target="_blank"
+    className="bg-black text-white px-4 py-2 rounded-lg"
+  >
+    Live Demo
+  </a>
+)}
+
+Now button only appears if a live link exists.
