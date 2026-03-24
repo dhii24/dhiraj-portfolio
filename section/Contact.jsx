@@ -1,53 +1,53 @@
-"use client"
+"use client";
 
-import { useState } from "react"
+import { useState } from "react";
 
 export default function Contact() {
-
   const [form, setForm] = useState({
     name: "",
     email: "",
-    message: ""
-  })
+    message: "",
+  });
 
   const handleChange = (e) => {
     setForm({
       ...form,
-      [e.target.name]: e.target.value
-    })
-  }
+      [e.target.name]: e.target.value,
+    });
+  };
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
 
     const res = await fetch("/api/contact", {
       method: "POST",
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify(form)
-    })
+      body: JSON.stringify(form),
+    });
 
-    const data = await res.json()
+    if (!res.ok) {
+      alert("Failed to send message");
+      return;
+    }
+    
+    const data = await res.json();
 
     if (data.success) {
-      alert("Message sent successfully!")
-      setForm({ name: "", email: "", message: "" })
+      alert("Message sent successfully!");
+      setForm({ name: "", email: "", message: "" });
     }
-  }
+  };
 
   return (
     <section id="contact" className="py-24 px-6">
-
-      <h2 className="text-4xl font-bold text-center mb-16">
-        Contact Me
-      </h2>
+      <h2 className="text-4xl font-bold text-center mb-16">Contact Me</h2>
 
       <form
         onSubmit={handleSubmit}
         className="max-w-xl mx-auto flex flex-col gap-6"
       >
-
         <input
           type="text"
           name="name"
@@ -75,15 +75,10 @@ export default function Contact() {
           className="border p-4 rounded-lg"
         ></textarea>
 
-        <button
-          type="submit"
-          className="bg-black text-white py-3 rounded-lg"
-        >
+        <button type="submit" className="bg-black text-white py-3 rounded-lg">
           Send Message
         </button>
-
       </form>
-
     </section>
-  )
+  );
 }
