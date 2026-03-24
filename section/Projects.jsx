@@ -1,3 +1,7 @@
+import { Button } from "@/components/ui/button"
+import { Badge } from "@/components/ui/badge"
+import { FaGithub } from "react-icons/fa"
+
 export default function Projects() {
   const projects = [
     {
@@ -46,37 +50,67 @@ export default function Projects() {
   ];
 
   return (
-    <section id="projects" className="py-24 px-6">
-      <h2 className="text-4xl font-bold text-center mb-16">Projects</h2>
+    <section id="projects" className="mx-auto max-w-6xl px-6 py-24">
+      <div className="mb-12 text-center">
+        <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
+          Projects
+        </h2>
+        <p className="mt-3 text-sm text-muted-foreground">
+          A few things I’ve built recently.
+        </p>
+      </div>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto">
+      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {projects.map((project, index) => (
           <div
             key={index}
-            className="border rounded-xl p-6 hover:shadow-xl hover:-translate-y-2 transition duration-300 flex flex-col h-full"
+            className="group flex h-full flex-col rounded-2xl border border-border bg-background p-6 shadow-sm transition-shadow hover:shadow-md"
           >
-            <h3 className="text-2xl font-semibold mb-4">{project.title}</h3>
+            <div className="flex items-start justify-between gap-4">
+              <div className="flex items-center gap-3">
+                <div className="grid h-10 w-10 place-items-center rounded-full border border-border bg-muted text-sm font-semibold text-foreground">
+                  {project.title?.[0] ?? "P"}
+                </div>
+                <div>
+                  <h3 className="text-base font-semibold tracking-tight">
+                    {project.title}
+                  </h3>
+                </div>
+              </div>
+            </div>
 
-            <p className="text-gray-500 mb-4">{project.description}</p>
+            <div className="flex-1">
+              <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
+                {project.description}
+              </p>
 
-            <p className="text-sm font-medium mb-6">{project.tech}</p>
+              <div className="mt-5 flex flex-wrap gap-2">
+                {String(project.tech || "")
+                  .split(",")
+                  .map((t) => t.trim())
+                  .filter(Boolean)
+                  .slice(0, 6)
+                  .map((t) => (
+                    <Badge key={t}>{t}</Badge>
+                  ))}
+              </div>
+            </div>
 
-            <div className="flex gap-4 mt-auto">
-              <a
-                href={project.github}
-                target="_blank"
-                className="border px-4 py-2 rounded-lg"
-              >
-                GitHub
-              </a>
+            <div className="mt-8 flex items-center gap-2">
+              <Button variant="outline" asChild className="gap-2">
+                <a href={project.github} target="_blank" rel="noreferrer">
+                  <FaGithub className="h-4 w-4" aria-hidden="true" />
+                  GitHub
+                </a>
+              </Button>
 
-              <a
-                href={project.live}
-                target="_blank"
-                className="bg-black text-white px-4 py-2 rounded-lg"
-              >
-                Live Demo
-              </a>
+              {project.live ? (
+                <Button asChild>
+                  <a href={project.live} target="_blank" rel="noreferrer">
+                    Live demo
+                  </a>
+                </Button>
+              ) : null}
             </div>
           </div>
         ))}

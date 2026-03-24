@@ -1,12 +1,10 @@
 export default function Loader() {
   return (
-    <div className="fixed inset-0 flex flex-col items-center justify-center">
+    <div className="fixed inset-0 flex flex-col items-center justify-center bg-background text-foreground">
 
-      <div className="w-12 h-12 border-4 border-t-black rounded-full animate-spin"></div>
+      <div className="h-10 w-10 animate-spin rounded-full border-2 border-border border-t-foreground" />
 
-      <p className="text-xl font-bold animate-pulse">
-        Loading Dhiraj.dev...
-      </p>
+      <p className="mt-4 text-sm text-muted-foreground">Loading…</p>
 
     </div>
   )
