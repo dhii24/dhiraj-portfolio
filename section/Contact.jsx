@@ -30,12 +30,12 @@ export default function Contact() {
       body: JSON.stringify(form),
     });
 
+    const data = await res.json().catch(() => ({}));
+
     if (!res.ok) {
-      alert("Failed to send message");
+      alert(data.error || "Failed to send message");
       return;
     }
-    
-    const data = await res.json();
 
     if (data.success) {
       alert("Message sent successfully!");
