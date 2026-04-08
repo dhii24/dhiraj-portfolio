@@ -21,6 +21,11 @@ export default function Navbar() {
             <Button variant="ghost" className="text-sm" asChild>
               <a href="#contact">Contact</a>
             </Button>
+            <Button className="text-sm" asChild>
+              <a href="/DhirajAcharyaCV.pdf" target="_blank" rel="noreferrer">
+                Resume
+              </a>
+            </Button>
           </div>
 
           <ModeToggle />

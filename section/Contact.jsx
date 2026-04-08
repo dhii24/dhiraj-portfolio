@@ -56,9 +56,9 @@ export default function Contact() {
 
       <form
         onSubmit={handleSubmit}
-        className="mx-auto max-w-3xl rounded-2xl border border-border bg-background p-6 shadow-sm sm:p-8"
+        className="mx-auto max-w-xl rounded-2xl border border-border bg-background p-6 shadow-sm sm:p-8"
       >
-        <div className="grid gap-4 sm:grid-cols-2">
+        <div className="grid gap-4 sm:grid-cols-1">
           <div className="space-y-2">
             <label htmlFor="name" className="text-sm font-medium text-foreground">
               Your Name
@@ -67,7 +67,7 @@ export default function Contact() {
               id="name"
               type="text"
               name="name"
-              placeholder="Your full name"
+              placeholder="What is your good name?"
               value={form.name}
               onChange={handleChange}
               className="h-11 bg-muted/50"
@@ -82,7 +82,7 @@ export default function Contact() {
               id="email"
               type="email"
               name="email"
-              placeholder="Your email address"
+              placeholder="What is your email address?"
               value={form.email}
               onChange={handleChange}
               className="h-11 bg-muted/50"
@@ -97,7 +97,7 @@ export default function Contact() {
           <Textarea
             id="message"
             name="message"
-            placeholder="Write something...."
+            placeholder="What do you want to say?"
             rows="7"
             value={form.message}
             onChange={handleChange}

@@ -1,5 +1,7 @@
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
+import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa"
+import { SiLeetcode } from "react-icons/si"
 
 export default function Hero() {
   return (
@@ -33,9 +35,50 @@ export default function Hero() {
       </h1>
 
       <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-        Full Stack MERN Developer passionate about building fast, scalable and
-        user-friendly web applications.
+      Backend Engineer | Node.js, APIs & Scalable Systems
       </p>
+      <p className="mt-0 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+      Building production-ready APIs and integrating AI into real-world applications
+      </p>
+
+      <div className="mt-6 flex items-center justify-center gap-3">
+        <a
+          href="https://github.com/dhii24"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="GitHub"
+          className="grid h-10 w-10 place-items-center rounded-xl border border-border bg-background text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
+        >
+          <FaGithub className="h-5 w-5" aria-hidden="true" />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/dhirajacharya/"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="LinkedIn"
+          className="grid h-10 w-10 place-items-center rounded-xl border border-border bg-background text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
+        >
+          <FaLinkedin className="h-5 w-5" aria-hidden="true" />
+        </a>
+        <a
+          href="https://leetcode.com/u/dhiiii24/"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="LeetCode"
+          className="grid h-10 w-10 place-items-center rounded-xl border border-border bg-background text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
+        >
+          <SiLeetcode className="h-5 w-5" aria-hidden="true" />
+        </a>
+        <a
+          href="https://www.instagram.com/dhii__24/"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="Instagram"
+          className="grid h-10 w-10 place-items-center rounded-xl border border-border bg-background text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
+        >
+          <FaInstagram className="h-5 w-5" aria-hidden="true" />
+        </a>
+      </div>
 
       <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:gap-4">
         <Button asChild>
