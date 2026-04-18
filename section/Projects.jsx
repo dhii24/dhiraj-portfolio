@@ -9,7 +9,14 @@ export default function Projects() {
       description: "Gym Member Management App using Node.js, Express, MongoDB",
       tech: "Tailwind CSS, Node.js, Express.js, MongoDB, EJS for templating",
       github: "https://github.com/dhii24/gym-member-management-app",
-      // live: "https://password-manager-demo.vercel.app",
+      live: "https://youtu.be/F7-YZ8cJ-Eg",
+    },
+    {
+      title: "CN-Visual-Lab",
+      description: "Computer Networks Visual Lab using HTML,Tailwind, JS",
+      tech: " Tailwind CSS, JavaScript, Computer Networks Concepts",
+      github: "https://github.com/dhii24/cn-visual-lab",
+      live: "https://youtu.be/-nmQZxRrMv0",
     },
     {
       title: "React-Weather-App",
@@ -17,13 +24,6 @@ export default function Projects() {
         "Weather app that fetches temperature, humidity across the nation",
       tech: "React, JavaScript(ES6), Weather API(OpenWeather API)",
       github: "https://github.com/dhii24/react-weather-app",
-      // live: "https://task-manager-demo.vercel.app",
-    },
-    {
-      title: "CN-Visual-Lab",
-      description: "Computer Networks Visual Lab using HTML,Tailwind, JS",
-      tech: " Tailwind CSS, JavaScript, Computer Networks Concepts",
-      github: "https://github.com/dhii24/cn-visual-lab",
       // live: "https://task-manager-demo.vercel.app",
     },
     {
@@ -105,7 +105,10 @@ export default function Projects() {
               </Button>
 
               {project.live ? (
-                <Button asChild>
+                <Button
+                  asChild
+                  className="bg-black text-white hover:bg-black/90"
+                >
                   <a href={project.live} target="_blank" rel="noreferrer">
                     Live demo
                   </a>

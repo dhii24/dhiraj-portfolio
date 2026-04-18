@@ -81,7 +81,7 @@ export default function Hero() {
       </div>
 
       <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:gap-4">
-        <Button asChild>
+        <Button variant="outline" asChild>
           <a href="#projects">View projects</a>
         </Button>
 
