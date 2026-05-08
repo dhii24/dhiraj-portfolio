@@ -80,15 +80,6 @@ export default function Hero() {
         </a>
       </div>
 
-      <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:gap-4">
-        <Button variant="outline" asChild>
-          <a href="#projects">View projects</a>
-        </Button>
-
-        <Button variant="outline" asChild>
-          <a href="#contact">Contact</a>
-        </Button>
-      </div>
     </section>
   );
 }

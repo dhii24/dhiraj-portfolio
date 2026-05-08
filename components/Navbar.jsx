@@ -19,6 +19,9 @@ export default function Navbar() {
               <a href="#projects">Projects</a>
             </Button>
             <Button variant="ghost" className="text-sm" asChild>
+              <a href="#experience">Experience</a>
+            </Button>
+            <Button variant="ghost" className="text-sm" asChild>
               <a href="#contact">Contact</a>
             </Button>
             <Button variant="ghost" className="text-sm" asChild>

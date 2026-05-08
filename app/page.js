@@ -5,6 +5,7 @@ import Navbar from "../components/Navbar";
 import Hero from "../section/Hero";
 import Skills from "../section/Skills";
 import Projects from "../section/Projects";
+import Experience from "../section/Experience";
 import Contact from "../section/Contact";
 
 export default function Home() {
@@ -25,6 +26,7 @@ export default function Home() {
       <Hero />
       <Skills />
       <Projects />
+      <Experience />
       <Contact />
     </main>
   );
